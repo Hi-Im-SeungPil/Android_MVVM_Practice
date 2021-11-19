@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="org.jeonfeel.livedata_databinding_practice.UserProfile"/>
+
+        <variable
+            name="userProfile"
+            type="org.jeonfeel.livedata_databinding_practice.UserProfile" />
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userProfile.name}"/>
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userProfile.phone}"/>
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userProfile.address}"/>
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userProfile.gender == userProfile.MALE ? &quot;남성&quot; : &quot;여성&quot;}"/>
+<!--            android:text="@{(userProfile.gender == 0) ? &quot;남성&quot; : &quot;여성&quot;}"/>-->
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            imageUrl="@{userProfile.profileUrl}"/>
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수정"/>
+
+    </LinearLayout>
+
+</layout>
